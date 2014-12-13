@@ -1,0 +1,11 @@
+# Site settings
+title: AH
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  В этом блоге я буду реализовывать алгоритмы c книги Кормен Т., Лейзерсон Ч., Ривест Р. - "Алгоритмы. Построение и анализ"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+github_username:  Arti3DPlayer
+
+# Build settings
+markdown: kramdown

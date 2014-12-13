@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Сортировка выбором"
+date:   2014-12-13 19:12:48
+---
+Сортировка выбором (**Selection sort**) работает так: просмотрим массив и найдём минимальный елемент, который скопируем в первую ячейку другого массива. Затем просмотрим его снова и найдём следуйщий елемент, и так далее.
+Вычеслительная сложность: *O(n<sup>2</sup>)*
+
+Реализация на языке **Python**:
+
+
+{% highlight python %}
+def selection_sort(array):
+	for j in xrange(0, len(array)):
+		tmp = j
+		for i in xrange(j+1, len(array)):
+			if array[tmp] > array[i]:
+				tmp = i
+		array[tmp], array[j] = array[j], array[tmp]
+	return array
+{% endhighlight %}
+
+Для сортировки по убыванию меняем `if array[tmp] < array[i]:`
