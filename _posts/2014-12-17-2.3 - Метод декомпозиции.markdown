@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "2.3 - Метод декомпозиции"
+date:   2014-12-17 19:12:48
+---
+Реализуем сортировку слиянием на основе псевдокода в книге:
+
+{% highlight python %}
+def merge(array, p, q, r):
+	n = q-p+1
+	n2 = r-q
+	left = [array[p+i] for i in range(0, n)]
+	right = [array[q+j+1] for j in range(0, n2)]
+	i = 0
+	j = 0
+	for k in range(p, r):
+		if left[i] <= right[j]:
+			array[k] = left[i]
+			i += 1
+		else:
+			array[k], array[k+1] = right[j], array[k]
+			j += 1
+
+def merge_sort(array, p, r):
+	if p < r:
+		q = (p+r)/2
+		merge_sort(array, p, q)
+		merge_sort(array, q+1, r)
+		merge(array, p, q, r)
+	return array
+
+{% endhighlight %}
+
+Оптимизируем код, и перепишем в python стиле:
+#TODO
+
+### Упражнение 2.3.1
+> Проилюстрируйте работу алгоритма сортировки слиянием для массива A = [3, 41, 52, 26, 38, 57, 9, 49]
+
+
+### Упражнение 2.3.3
+#TODO
+
+### Упражнение 2.3.4
+#TODO
+
+### Упражнение 2.3.5
+#TODO
