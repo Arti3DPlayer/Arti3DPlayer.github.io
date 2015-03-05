@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  <script src="{{ "/js/jquery.1.11.1.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/bootstrap-collapse.js" | prepend: site.baseurl }}"></script>
+  <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
+
+
+  <body>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content | markdownify }}
+      </div>
+    </div>
+
+  </body>
+
+</html>
