@@ -3,7 +3,7 @@
 
   {% include head.html %}
   <script src="{{ "/js/jquery.1.11.1.min.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/js/bootstrap-collapse.js" | prepend: site.baseurl }}"></script>
+ 
   <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
 
 
@@ -11,9 +11,26 @@
 
     <div class="page-content">
       <div class="wrapper">
-        {{ content | markdownify }}
+        <dl class="accordion">
+          {{ content | unindent | markdownify }}
+        </dl>
       </div>
     </div>
+
+     <script type="text/javascript">
+
+   (function($) {
+    
+  var allPanels = $('.accordion > ul').hide();
+
+  $('.accordion > h1').click(function() {
+    allPanels.hide();
+    $(this).next().show();
+    return false;
+  });
+
+})(jQuery);
+  </script>
 
   </body>
 
