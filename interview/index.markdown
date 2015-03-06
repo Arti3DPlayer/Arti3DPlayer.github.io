@@ -248,4 +248,7 @@ GIL является самым простым способом избежать
     * Model-View-View Model
     
     [Подробнее](http://habrahabr.ru/post/215605/)
+
+# Что такое middleware?
+*   **Middleware** - промежуточный слой который может срабатывать перед view и после view
     
