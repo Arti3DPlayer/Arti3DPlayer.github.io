@@ -7,11 +7,21 @@
   <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
 
   <style>
-    nav {
+    nav.left {
       position: fixed;
-    };
+    }
+    nav.right {
+      overflow: hidden;
+      position: fixed;
+      right: 30px;
+      width: 240px;
+    }
   </style>
-  <nav>
+  <nav class='left'>
+    <ul>
+    </ul>
+  </nav>
+  <nav class='right'>
     <ul>
     </ul>
   </nav>
@@ -29,14 +39,22 @@
 
          (function($) {
           $('.accordion h2').each(function(){
-
             var item = "<li><a href='#"+ $(this).attr('id') +"'>"+$(this).html()+"</a></li>";
-            $('nav ul').append(item)
+            $('nav.left ul').append(item)
+          });
+          $('.accordion h1 strong').each(function(){
+            var $h1 = $(this).closest('h1');
+            var item = "<li><a href='#"+ $h1.attr('id') +"'>"+$h1.html()+"</a></li>";
+            $('nav.right ul').append(item)
           });
           var allPanels = $('.accordion > ul').hide();
         $('.accordion > h1').click(function() {
           allPanels.hide();
-          $(this).next().show();
+          var $next = $(this).next();
+          if ($next.data("slided") !== true){
+            $next.show();
+            $next.data("slided", true);
+          }
           return false;
         });
 
