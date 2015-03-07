@@ -16,14 +16,21 @@
       right: 30px;
       width: 240px;
     }
+    .bottom {
+      bottom: 10px;
+    }
+    h1 em {
+      color: green;
+    }
   </style>
   <nav class='left'>
-    <ul>
-    </ul>
+    <ul></ul>
   </nav>
   <nav class='right'>
-    <ul>
-    </ul>
+    <ul></ul>
+  </nav>
+  <nav class='right bottom'>
+    <ul></ul>
   </nav>
   <body>
 
@@ -45,7 +52,12 @@
           $('.accordion h1 strong').each(function(){
             var $h1 = $(this).closest('h1');
             var item = "<li><a href='#"+ $h1.attr('id') +"'>"+$h1.html()+"</a></li>";
-            $('nav.right ul').append(item)
+            $('nav.right:not(.bottom) ul').append(item)
+          });
+          $('.accordion h1 em').each(function(){
+            var $h1 = $(this).closest('h1');
+            var item = "<li><a href='#"+ $h1.attr('id') +"'>"+$h1.html()+"</a></li>";
+            $('nav.right.bottom ul').append(item)
           });
           var allPanels = $('.accordion > ul').hide();
         $('.accordion > h1').click(function() {
