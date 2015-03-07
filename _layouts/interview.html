@@ -6,7 +6,15 @@
 
   <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
 
-
+  <style>
+    nav {
+      position: fixed;
+    };
+  </style>
+  <nav>
+    <ul>
+    </ul>
+  </nav>
   <body>
 
     <div class="page-content">
@@ -19,18 +27,21 @@
 
      <script type="text/javascript">
 
-   (function($) {
+         (function($) {
+          $('.accordion h2').each(function(){
 
-  var allPanels = $('.accordion > ul').hide();
+            var item = "<li><a href='#"+ $(this).attr('id') +"'>"+$(this).html()+"</a></li>";
+            $('nav ul').append(item)
+          });
+          var allPanels = $('.accordion > ul').hide();
+        $('.accordion > h1').click(function() {
+          allPanels.hide();
+          $(this).next().show();
+          return false;
+        });
 
-  $('.accordion > h1').click(function() {
-    allPanels.hide();
-    $(this).next().show();
-    return false;
-  });
-
-})(jQuery);
-  </script>
+      })(jQuery);
+    </script>
 
   </body>
 

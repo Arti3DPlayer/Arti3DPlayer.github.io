@@ -317,8 +317,6 @@ GIL является самым простым способом избежать
     ```@staticmethod``` means: when this method is called, we don't pass an instance of the class to it (as we normally do with methods). This means you can put a function inside a class but you can't access the instance of that class (this is useful when your method does not use the instance).
 
 
-##Django
-
 # Какой основной шаблон проектирования лежит в основе фреймверка?
 *   MTV (Model-Template-View)  
     Наиболее распространенные виды MVC-паттерна, это:
