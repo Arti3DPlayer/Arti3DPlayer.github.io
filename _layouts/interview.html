@@ -20,22 +20,18 @@
     </div>
 
      <script type="text/javascript">
+          (function($) {
+            $('pre').each(function(i, block) {
+              hljs.highlightBlock(block);
+            });
+            var allPanels = $('.accordion > ul').hide();
 
-   (function($) {
-    $('pre').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
-  var allPanels = $('.accordion > ul').hide();
-
-  $('.accordion > h1').click(function() {
-    allPanels.hide();
-    $(this).next().show();
-    return false;
-  });
-
-})(jQuery);
-  </script>
-
+            $('.accordion > h1').click(function() {
+                allPanels.hide();
+                $(this).next().show();
+                return false;
+            });
+        })(jQuery);
+    </script>
   </body>
-
 </html>
