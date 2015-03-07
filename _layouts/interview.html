@@ -54,6 +54,8 @@
           if ($next.data("slided") !== true){
             $next.show();
             $next.data("slided", true);
+          } else {
+            $next.data("slided", false);
           }
           return false;
         });
