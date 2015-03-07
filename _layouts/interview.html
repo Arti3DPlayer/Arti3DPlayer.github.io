@@ -51,11 +51,12 @@
         $('.accordion > h1').click(function() {
           allPanels.hide();
           var $next = $(this).next();
-          if ($next.data("slided") !== true){
-            $next.show();
-            $next.data("slided", true);
+          if ($(this).data("slided")){
+            $(this).data("slided", false);
           } else {
-            $next.data("slided", false);
+            $next.show();
+            $('*').data("slided", false);
+            $(this).data("slided", true);
           }
           return false;
         });
