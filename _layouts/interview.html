@@ -5,8 +5,6 @@
   <script src="{{ "/js/jquery.1.11.1.min.js" | prepend: site.baseurl }}"></script>
 
   <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 
 
   <body>
@@ -20,18 +18,20 @@
     </div>
 
      <script type="text/javascript">
-          (function($) {
-            $('pre').each(function(i, block) {
-              hljs.highlightBlock(block);
-            });
-            var allPanels = $('.accordion > ul').hide();
 
-            $('.accordion > h1').click(function() {
-                allPanels.hide();
-                $(this).next().show();
-                return false;
-            });
-        })(jQuery);
-    </script>
+   (function($) {
+
+  var allPanels = $('.accordion > ul').hide();
+
+  $('.accordion > h1').click(function() {
+    allPanels.hide();
+    $(this).next().show();
+    return false;
+  });
+
+})(jQuery);
+  </script>
+
   </body>
+
 </html>
